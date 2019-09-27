@@ -5,9 +5,15 @@ def home (request):
     return render(request, 'home.html')
 
 def product_list (request):
-    products=Product.objects.all()   
+     if (request.method == 'POST'):
+         products = Product(request.POST)
+        if products.is_valid():
+            products.save()
+            return redirect ('/market/list/')
+        else:
+            return render(request, 'home.html', {'home':home})
+    products=Product.objects.all()
     return render(request, 'list.html', {'products': products})
-    
 
 def order_name(request):
     products= Product.objects.order_by('name')
