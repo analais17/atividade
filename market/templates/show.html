@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block conteudo%}       
+
+<div>
+<label>Produto:</label>
+    {{product.name}}
+</div> 
+
+<div>
+<label>Valor:</label>
+{{product.value}}
+</div> 
+
+<button type="submit">Finalizar Compra</button>
+
+
+{% endblock %}

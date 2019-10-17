@@ -18,8 +18,13 @@
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
         <td>{{product.value}}</td>
+
+
        
-
-        {% endfor %}
-
+     <td><a href="/market/{{product.id}}/"> comprar </a></td>
+    </tr>
+    {% endfor %}
+  
+  <button type="submit"> Carrinho: {{request.session.li | length}}</button> 
+  </table>
 {% endblock %}

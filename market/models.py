@@ -26,4 +26,5 @@ class Amount (models.Model):
     product=models.ForeignKey(Product, on_delete=models.CASCADE) 
     shopping_cart=models.ForeignKey(Shopping_Cart, on_delete=models.CASCADE,primary_key=True) 
 
+
 # Create your models here.
