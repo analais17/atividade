@@ -34,8 +34,21 @@ def purchase (request, product_id):
     return redirect('/market/list/')
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 def product_show (request):
-    products = Product.objects.all()
-    return render(request, 'show.html/', {'products':products})
+    l = request.session['li']
+    products=[]
+    for product_id in l:
+        product= Product.objects.get(pk=product_id)
+        products.append(product)
+    return render(request, 'show.html/', {'product': product})
+       
+
+
+     
+
+
+    
+    
+    
     
 
     
