@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
-{% block conteudo%}       
-<div>
-    <label>Produto:</label>
-        {{product.name}}
-    </div> 
+{% block conteudo %}       
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Nome:</th>
+        <th>Valor: </th>
+        
+       
+        
+    </tr>
     
-    <div>
-    <label>Valor:</label>
-    {{product.value}}
-    </div> 
+{% for product in products %}
+    <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.value}}</td>
+    </tr>
+{% endfor %}
+
+</table>
+
 <h3>Total:  </h3>
 
 <button type="submit">Finalizar Compra</button>

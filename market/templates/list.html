@@ -25,6 +25,6 @@
     </tr>
     {% endfor %}
   
-  <button type="submit" href='/show'> Carrinho: {{request.session.li | length}}</button> 
+  <a type="submit" href='/market/show'> Carrinho: {{request.session.li | length}}</a> 
   </table>
 {% endblock %}

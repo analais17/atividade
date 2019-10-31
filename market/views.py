@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from. models import Product
+from. models import Client
+from. models import Shopping_Cart
 
 def home (request):
     number=request.session.get('number', 1)
@@ -39,9 +41,12 @@ def product_show (request):
     for product_id in l:
         product= Product.objects.get(pk=product_id)
         products.append(product)
-    return render(request, 'show.html/', {'product': product})
+    return render(request, 'show.html/', {'products': products})
        
-
+def cart (request):
+    client= Client.objects.get
+    Shopping_Cart.objects.create(client)
+    
 
      
 
